@@ -58,7 +58,7 @@ int mbTcpConnect(mbCtx *ctx) {
     assert(hostname);
     ipAddress = srealloc_copy(ipAddress, htoip(hostname)); /* overwrite IP parameter for current instance */
   }
-  struct sockaddr_in mbServer; /* Set connection parameters sendded */
+  struct sockaddr_in mbServer; /* Set connection parameters sent */
   mbServer.sin_addr.s_addr = inet_addr(ipAddress);
   mbServer.sin_family = AF_INET;  
   mbServer.sin_port = htons(ctx->dev.link.modbusTcp.port);
@@ -253,7 +253,7 @@ int mbSendRequest(mbCtx *ctx, _ln *mbr){
 };
 
 /**
- * @brief Print to stdout sendded ADU raw data
+ * @brief Print to stdout sent ADU raw data
 **/
 int _mbRequestRaw(const mbCtx *ctx){
   assert(ctx);
